@@ -17,36 +17,39 @@ It allows you to manage LaTeX packages on a **per-project basis**, ensuring **re
 
 ## 🚀 Installation  
 
+```bah
+```
 
 ## 📖 Usage
 
 Create a new TeX Live environment for your project:
-
+```bah
 texbox init my-project
+```
 
 Activate the environment:
-
+```bash
 texbox activate my-project
+```
 
 Install a LaTeX package inside the environment:
-
+```bash
 tlmgr install <package-name>
+```
 
 Deactivate the environment:
-
+```bah
 texbox deactivate
+```
 
 Remove an environment:
-
+```bash
 texbox remove my-project
+```
 
-## 📂 Example Project Structure
+## 📂 Project Structure
 
 ```text
-my-project/
-├── texbox.toml      # Environment configuration
-├── main.tex
-└── output.pdf
 ```
 
 ## 🤝 Contributing
