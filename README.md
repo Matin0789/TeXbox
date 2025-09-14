@@ -17,7 +17,7 @@ It allows you to manage LaTeX packages on a **per-project basis**, ensuring **re
 
 ## 🚀 Installation  
 
-```bah
+```bash
 ```
 
 ## 📖 Usage
@@ -50,6 +50,10 @@ texbox remove my-project
 ## 📂 Project Structure
 
 ```text
+/
+├── .toml 
+├── 
+└── 
 ```
 
 ## 🤝 Contributing
