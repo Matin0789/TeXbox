@@ -17,12 +17,7 @@ It allows you to manage LaTeX packages on a **per-project basis**, ensuring **re
 
 ## 🚀 Installation  
 
-```bash
-git clone https://github.com/<username>/TeXbox.git
-cd TeXbox
-# Run installation (example)
-./install.sh
-```
+###
 
 📖 Usage
 
@@ -56,6 +51,7 @@ my-project/
 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! 🙌
+
 📄 License
 
 This project is licensed under the Apache-2.0 License.
