@@ -22,7 +22,7 @@ git clone https://github.com/<username>/TeXbox.git
 cd TeXbox
 # Run installation (example)
 ./install.sh
-‍‍‍```
+```
 
 📖 Usage
 
