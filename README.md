@@ -17,9 +17,8 @@ It allows you to manage LaTeX packages on a **per-project basis**, ensuring **re
 
 ## 🚀 Installation  
 
-###
 
-📖 Usage
+## 📖 Usage
 
 Create a new TeX Live environment for your project:
 
@@ -41,18 +40,18 @@ Remove an environment:
 
 texbox remove my-project
 
-📂 Example Project Structure
+## 📂 Example Project Structure
 
 my-project/
 ├── texbox.toml      # Environment configuration
 ├── main.tex
 └── output.pdf
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! 🙌
 
-📄 License
+## 📄 License
 
 This project is licensed under the Apache-2.0 License.
 
