@@ -42,10 +42,12 @@ texbox remove my-project
 
 ## 📂 Example Project Structure
 
+```text
 my-project/
 ├── texbox.toml      # Environment configuration
 ├── main.tex
 └── output.pdf
+```
 
 ## 🤝 Contributing
 
