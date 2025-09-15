@@ -11,25 +11,32 @@ if [ "$COMMAND" = "init" ]; then
         mkdir -p "$(pwd)/$PROJECT_NAME"
     fi
 
-    mkdir -p "$ENV_DIR/texmf" "$ENV_DIR/var" "$ENV_DIR/tlpkg"
+    mkdir -p "$ENV_DIR/texmf" "$ENV_DIR/var" "$ENV_DIR/config" "$ENV_DIR/tlpkg"
 
-    cat > "$ENV_DIR/activate" << EOF
+    cat > "$ENV_DIR/activate" << 'EOF'
+export _OLD_TEXBOX_PATH="$PATH"
+export _OLD_TEXMFHOME="$TEXMFHOME"
+export _OLD_TEXMFVAR="$TEXMFVAR"
+export _OLD_TEXMFCONFIG="$TEXMFCONFIG"
+
 deactivate() {
-    unset TEXMFHOME
-    unset TEXMFVAR
-    unset TLUSRHOME
+    export PATH="$_OLD_TEXBOX_PATH"
+    export TEXMFHOME="$_OLD_TEXMFHOME"
+    export TEXMFVAR="$_OLD_TEXMFVAR"
+    export TEXMFCONFIG="$_OLD_TEXMFCONFIG"
+    unset _OLD_TEXBOX_PATH _OLD_TEXMFHOME _OLD_TEXMFVAR _OLD_TEXMFCONFIG
+    unset -f deactivate
     echo "TeXbox environment deactivated"
 }
-if [ -n "$BASH_VERSION" ]; then
-    export -f deactivate
-fi
 
-export TEXMFHOME="$ENV_DIR/texmf"
-export TEXMFVAR="$ENV_DIR/var"
-export TLUSRHOME="$ENV_DIR"
-export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
-echo "TeXbox environment activated for project at $ENV_DIR"
+export TEXMFHOME="$(pwd)/.texbox/texmf"
+export TEXMFVAR="$(pwd)/.texbox/var"
+export TEXMFCONFIG="$(pwd)/.texbox/config"
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:\$PATH"
+
+echo "TeXbox environment activated at $(pwd)/.texbox"
 EOF
 
     echo "TeXbox environment initialized at $ENV_DIR"
 fi
+
