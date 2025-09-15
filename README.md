@@ -25,7 +25,7 @@ chmod +x install.sh
 
 This will copy the `texbox` CLI to `~/.texbox/bin` and automatically add it to your PATH if you are using Bash or Zsh.
 
-Then restart your terminal or run:
+Then reload your terminal or run:
 
 **bash:**
 
@@ -68,11 +68,7 @@ chmod +x uninstall.sh
 ./uninstall.sh
 ```
 
-Then reload your shell:
-
-```bash
-source ~/.bashrc
-```
+Then reload your shell
 
 ---
 
