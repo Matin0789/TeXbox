@@ -2,7 +2,7 @@
 
 INSTALL_DIR="$HOME/.texbox"
 
-rm -rf "$INSTALL_DIR/bin/texbox"
+rm -rf "$INSTALL_DIR"
 
 if [ -n "$ZSH_VERSION" ]; then
     SHELL_RC="$HOME/.zshrc"
