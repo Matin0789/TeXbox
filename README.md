@@ -34,6 +34,7 @@ source ~/.bashrc
 
 ```bash
 cd TeXbox
+chmod +x uninstall.sh
 ./uninstall.sh
 ```
 
