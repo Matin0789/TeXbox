@@ -6,10 +6,11 @@ TeXbox is a lightweight tool for creating isolated TeX Live environments per pro
 
 ## ✨ Features
 
-- Project-scoped TeX Live environments
-- Package management independent of the global system
-- Reproducible builds across machines and CI/CD
-- Simple, intuitive CLI
+🔒 Project-specific isolated TeX Live environments
+📂 Package management completely independent from the global system
+♻️ Reproducible builds across different machines
+🛠 Simple and intuitive CLI
+⚡ CI/CD and team-collaboration friendly
 
 ---
 
@@ -22,11 +23,40 @@ chmod +x install.sh
 ./install.sh
 ```
 
-This installs `texbox` to `~/.texbox/bin` and appends it to your PATH in `~/.bashrc`. Restart your terminal or run:
+This will copy the `texbox` CLI to `~/.texbox/bin` and automatically add it to your PATH if you are using Bash or Zsh.
+
+Then restart your terminal or run:
+
+**bash:**
 
 ```bash
 source ~/.bashrc
 ```
+
+or
+
+**zsh:**
+
+```bash
+source ~/.zshrc
+```
+
+### ⚠️ Unsupported Shells
+
+TeXbox currently supports Bash and Zsh.
+If your shell is not supported:
+
+1. **TeXbox cannot automatically update your PATH.**
+
+2. **You need to manually add TeXbox to your PATH by adding the following line to your shell configuration file (e.g., `config.fish`, `config.csh`):**
+
+```bash
+export PATH="$HOME/.texbox/bin:$PATH"
+```
+
+3. **After editing your configuration file, restart your terminal or run source `<your-config-file>` to apply changes.**
+
+Once the PATH is set, you can use TeXbox commands and activate project environments as usual.
 
 ---
 
