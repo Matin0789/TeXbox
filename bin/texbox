@@ -1,0 +1,30 @@
+#!/bin/bash
+COMMAND="$1"
+
+if [ "$COMMAND" = "init" ]; then
+    ENV_DIR="$(pwd)/.texbox"
+    mkdir -p "$ENV_DIR/texmf" "$ENV_DIR/var" "$ENV_DIR/tlpkg"
+    cat > "$ENV_DIR/activate" << 'EOF'
+#!/bin/bash
+export TEXBOX_DIR="$PWD/.texbox"
+mkdir -p "$TEXBOX_DIR/texmf" "$TEXBOX_DIR/var" "$TEXBOX_DIR/tlpkg"
+export TEXMFHOME="$TEXBOX_DIR/texmf"
+export TEXMFVAR="$TEXBOX_DIR/var"
+export TLUSRHOME="$TEXBOX_DIR"
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
+echo "TeXbox environment activated for project at $(pwd)"
+deactivate() {
+    unset TEXMFHOME
+    unset TEXMFVAR
+    unset TLUSRHOME
+    echo "TeXbox environment deactivated"
+}
+export -f deactivate
+EOF
+    chmod +x "$ENV_DIR/activate"
+    echo "Project initialized at $ENV_DIR"
+    echo "Use 'source .texbox/activate' to activate the environment"
+    exit 0
+fi
+
+echo "Usage: texbox init"
