@@ -7,6 +7,7 @@ It allows you to manage LaTeX packages on a **per-project basis**, ensuring **re
 ---
 
 ## ✨ Features  
+
 - 🔒 Project-specific isolated TeX Live environments  
 - 📂 Package management independent from the global system  
 - ♻️ Reproducible builds across different machines  
@@ -18,18 +19,26 @@ It allows you to manage LaTeX packages on a **per-project basis**, ensuring **re
 ## 🚀 Installation  
 
 ```bash
+git clone https://github.com/Matin0789/TeXbox
+cd TeXbox
+chmod +x install.sh
+./install.sh
 ```
+
+---
 
 ## 📖 Usage
 
 Create a new TeX Live environment for your project:
 ```bah
-texbox init my-project
+mkdir my-project
+cd my-project
+texbox init .
 ```
 
 Activate the environment:
 ```bash
-texbox activate my-project
+source .texbox/activate
 ```
 
 Install a LaTeX package inside the environment:
@@ -37,31 +46,40 @@ Install a LaTeX package inside the environment:
 tlmgr install <package-name>
 ```
 
-Deactivate the environment:
-```bah
-texbox deactivate
+Compile your LaTeX document:
+```bash
+pdflatex main.tex
+xelatex main.tex
 ```
 
-Remove an environment:
+Deactivate the environment:
 ```bash
-texbox remove my-project
+deactivate
 ```
+
+Remove the project environment:
+```bash
+rm -rf my-project
+```
+
+---
 
 ## 📂 Project Structure
 
 ```text
-/
-├── .toml 
-├── 
-└── 
+my-project/
+├── main.tex
+└── .texbox/
+    ├── texmf/       # Installed packages for this project
+    ├── var/         # Cache and environment files
+    └── tlpkg/       # Package metadata for tlmgr
+    └── activate     # Script to activate the project environment       
 ```
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! 🙌
+Issues and feature requests are welcome! 🙌
 
 ## 📄 License
 
 This project is licensed under the Apache-2.0 License.
-
-
