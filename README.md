@@ -104,7 +104,6 @@ To reproduce the same environment on another machine:
 ## 🤝 Contributing
 
 Issues and feature requests are welcome! 🙌
-Feel free to submit PRs with bug fixes, improvements, or new features.
 
 ---
 
