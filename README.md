@@ -8,9 +8,13 @@ It helps you manage LaTeX packages locally, ensuring clean project separation an
 ## ✨ Features
 
 🔒 Project-specific isolated TeX Live environments
+
 📂 Package management independent from the global system
+
 ♻️ Reproducible builds (when using the same TeX Live version and package list)
+
 🛠 Simple and intuitive CLI workflow
+
 ⚡ CI/CD and team-collaboration friendly (just `source .texbox/activate` before compiling)
 
 ---
